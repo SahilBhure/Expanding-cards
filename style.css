@@ -6,7 +6,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; 
     margin: 0;
     
     background-position: center;
@@ -16,7 +16,11 @@ body{
 }
 .container{
     display: flex;
-    width: 90vw;
+    width: 100%;
+    height: 100%;
+    padding: 0 4em;
+    justify-content: center;
+    align-items: center;
 }
 .panel{
     background-size: auto 100%;
@@ -30,6 +34,8 @@ body{
     margin: 10px;
     position: relative;
     transition: flex 0.7s ease-in;
+
+    background-size: cover;
 }
 .panel h3{
     font-size: 24px;
@@ -49,25 +55,39 @@ body{
     backdrop-filter: blur(10px);
 }
 
-.background{
+/* .background{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     position: relative;
     backdrop-filter: blur(10px);
-}
+} */
 
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:720px) {
     .container{
         width: 100vw;
+        flex-direction: column;
+        padding: 0;
     }
-    .panel:nth-of-type(4),.panel:nth-of-type(5){
+    /* .panel:nth-of-type(4),.panel:nth-of-type(5){
         display: none;
+    } */
+    .panel {
+        width: 80vw;
+        background-size: cover;
+        flex: 0.3;
+    }
+
+    .panel h3 {
+        font-size: 16px;
+    }
+
+    .panel.active {
+        flex: 3;
     }
 }
-
 
 
 
